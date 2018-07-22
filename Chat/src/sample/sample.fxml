@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="table" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <stylesheets><URL value="@/sample/styles.css" /> </stylesheets>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="417.0" minWidth="10.0" prefWidth="183.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="446.0" minWidth="10.0" prefWidth="373.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="183.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="229.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <effect>
+        <ColorAdjust />
+    </effect>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowSpan="3" />
+    <Button fx:id="btn1" mnemonicParsing="false" onAction="#sendMsg" prefHeight="25.0" prefWidth="82.0" text="Отправить" GridPane.columnIndex="2" GridPane.rowIndex="2">
+      <GridPane.margin>
+         <Insets left="25.0" />
+      </GridPane.margin></Button>
+    <TextArea fx:id="textArea" editable="false" layoutY="100.0" prefHeight="280.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+      <opaqueInsets>
+         <Insets top="20.0" />
+      </opaqueInsets></TextArea>
+    <TextField fx:id="textField" promptText="Введите сообщение..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   <VBox fx:id="MusicBox" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowSpan="2">
+      <children>
+         <Button fx:id="btn2" mnemonicParsing="false" onMouseEntered="#ChooseMusic" prefHeight="25.0" prefWidth="125.0" text="Music">
+            <VBox.margin>
+               <Insets left="25.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+         <ChoiceBox fx:id="btnChoice" onAction="#MusicPlay" prefHeight="25.0" prefWidth="125.0">
+            <VBox.margin>
+               <Insets left="25.0" top="10.0" />
+            </VBox.margin>
+         </ChoiceBox>
+         <Button fx:id="btnBackGround" mnemonicParsing="false" onMouseClicked="#ChooseBack" prefHeight="25.0" prefWidth="125.0" text="Set background">
+            <VBox.margin>
+               <Insets left="25.0" top="10.0" />
+            </VBox.margin>
+         </Button>
+      </children>
+   </VBox>
+</GridPane>
